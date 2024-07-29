@@ -5,59 +5,135 @@
     <meta name="description" content="Final project for Code The Dream">
     <meta name="author" content="Alena Danilchenko">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <title>My CV</title>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <ul>
-                <li class="nav-item"><a href="#home">home</a></li>
-                <li class="nav-item"><a href="#about">about</a></li>
-                <li class="nav-item"><a href="#experience">experience</a></li>
-                <li class="nav-item"><a href="#connect">connect</a></li>
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#experience">Experience</a></li>
+                <li class="nav-item"><a href="#contact-me">Contact Me</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="home">
-            <h1>Alena Danilchenko</h1>
-            <h3>I am a web developer</h3>
-            <img src="images/my_photo.jpg" alt="Alena's photo" width="240px">
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>I am a student of Code The Dream. 
-                I have a dream to become a Software engineer. 
-                I am not afraid of working hard for it.
-            </p>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
+    <div class="big-container">
+        <main>
+            <section id="home">
+                <div class="home container">
+                    <div class="image-circle">
+                        <img src="images/my_photo.jpg" alt="Alena's photo">
+                    </div>
+                    <h1>Alena Danilchenko</h1>
+                    <h3>front-end developer</h3>
+                </div>
+                </section>
+            <section id="about">
+                <div class="about container">
+                    <h2>About</h2>
+                    <p>My name is Alena, and I am a Front-end Developer. 
+                        I enjoy solving complex problems and learning something new.
+                        I love the challenge of finding creative solutions.
+                        I am dedicated to keeping up-to-date with the latest technologies and
+                        trends to provide the best solutions for my clients.
+                        I pay great attention to detail in the design and development of my projects.
+                        I continue to learn to become Full-Stack Developer.
+                    </p>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="skills container">
+                    <h2>Skills</h2>
+                    <div class="skills-box">
+                        <div class="skill-item">
+                            <img src="images/html-5.png" alt="html" width="50px">
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/css.png" alt="css" width="50px">
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/JS.png" alt="JS" width="50px">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/bootstrap.png" alt="bootstrap" width="50px">
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/git.png" alt="git" width="50px">
+                            <p>Git/GitHub</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/figma.png" alt="figma" width="50px">
+                            <p>Figma</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/photoshop.png" alt="photoshop"  width="50px">
+                            <p>Photoshop</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/api.png" alt="api" width="50px">
+                            <p>API</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="images/gsap.png" alt="gsap" width="43px">
+                            <p>Gsap</p>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+            <section id="experience">
+                <div class="experience container">
+                    <h2>Experience</h2>
+                    <div>
+                        <p><b>2005 - 2010:</b> The Dean's Office Methodologist at the <a href="https://www.grsu.by/" target="_blank">Yanka Kupala State University of Grodno</a></p>
+                    </div>
+                    <div>
+                        <p><b>2010 - 2013:</b> Computer Operator at the <a href="https://www.belabios.com/" target="_blank">BelaBios</a> Software Development Company</p>
+                    </div>
+                    <div>
+                        <p><b>2022 - 2023:</b> Study at the Can She Code School.</p>
+                    </div>
+                    <div>
+                        <p><b>2023 - 2024:</b> Self Study. Visit <a href="https://glitch.com/@yourclearvoice" target="_blank">Glitch</a> to see my pet projects.</p>
+                    </div>
+                    <div>
+                        <p><b>2024 - Present:</b> Student of <a href="https://codethedream.org/" target="_blank">Code The Dream</a></p>
+                    </div>                    
+                </div>
+            </section>    
+            <section id="contact-me">
+                <div class="contact-me container">
+                    <h2>Contact me</h2>
+                    <!-- Name:
+                        email:
+                        message:
+                        submit -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footer">
             <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Git / GitHub</li>
-                <li>Figma</li>
-                <li>Photoshop</li>
-                <li>Bootstrap</li>
-                <li>Gsap</li>
+                <li><a href="https://www.linkedin.com/in/alena-danilchenko/" target="_blank">
+                    <img src="images/linkedin.png" alt="linkedin" width="50px">
+                </a></li>
+                <li><a href="https://www.facebook.com/alena.danilche" target="_blank">
+                    <img src="images/facebook.png" alt="facebook" width="50px">
+                </a></li>
+                <li><a href="https://www.instagram.com/alena.danilchenko.impro?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">
+                    <img src="images/instagram.png" alt="instagram" width="50px">
+                </a></li>
             </ul>
-        </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li>Visit <a href="https://glitch.com/@yourclearvoice" target="_blank">Glitch</a> to see my pet projects.</li>
-            </ul>
-        </section>    
-        <section id="connect">
-            <h2>Connect</h2>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/alena-danilchenko/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://www.facebook.com/alena.danilche"target="_blank">Facebook</a></li>
-                <li><a href="https://www.instagram.com/alena.danilchenko.impro?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a></li>
-            </ul>
-        </section>
-    </main>
+        </div>
+    </footer>    
 </body>
 </html>
