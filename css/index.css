@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(96, 157, 159);
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color:rgb(232, 204, 195);
+    border-radius: 5px 5px 0 0;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color:rgb(232, 204, 195);
+    border-radius: 0 0 5px 5px;
+}
+
+.big-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 0 10px ;
+    background-color:honeydew
+}
+
+.container {
+    max-width: 1000px ;
+    padding: 20px;
+    margin: 10px;
+    background-color:rgba(96, 157, 159, 0.2);
+    border-radius: 5px;    
+}
+
+.navbar a {
+    color: #378487;
+    font-weight: bold;
+}
+
+.navbar,
+.container p,
+.container ul {
+    font-size: 20px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:honeydew;
+}
+
+.home img {
+    border-radius: 100%;
+    width: 220px;
+}
+
+.image-circle {
+    border-radius: 100%;
+    border: 1px double #609d9f;
+    padding: 5px;
+    display: flex;
+}
+
+.navbar ul,
+.footer ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.about p {
+    line-height: 40px;   
+    padding-left: 70px; 
+}
+
+.experience div {
+    padding-left:80px;
+    padding-top: 10px;
+    line-height: 30px;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 10px;
+    
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+
+
+ul li a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 35px;
+    color: #378487;
+}
+
+h2 {
+    color: #378487;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p, li {
+    color:#000000;
+}
+
+.footer img {
+    filter: invert(52%) sepia(43%) saturate(600%) hue-rotate(143deg) brightness(91%) contrast(120%);
+}
