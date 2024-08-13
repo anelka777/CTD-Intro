@@ -5,7 +5,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html, body {
+html {
+   font-size: 16px; /* Basic font size */  
+}
+
+body {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -14,19 +18,20 @@ html, body {
 }
 
 header {
+    max-width: 1200px;
     position: sticky;
     top: 0;
     width: 100%;
-    padding: 30px;
+    padding: 2em 0;
     background-color:rgb(232, 204, 195);
-    border-radius: 5px 5px 0 0;
+    border-radius: 0.3125em 0.3125em 0 0; /* 5px / 16px = 0.3125em */
     z-index: 1000;
 }
 
 section {
     position: relative;
     z-index: 1;
-    padding-top: 50px;     
+    padding-top: 3.125em; /* 50px */   
 }
 
 
@@ -35,50 +40,59 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2.5rem; /* 40px  */
 }
 
 h2, h3 {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
 }
 
 
-p, li {
+p {
     color:#000000;
-}
-
-
-.navbar a {
-    color: #378487;
-    font-weight: bold;
-    font-size: 28px;
-    text-decoration: none;
 }
 
 .navbar ul {
     display: flex;
-    justify-content: space-evenly;
-    list-style: none;
+    justify-content: center;
+    list-style: none; 
 }
 
+.navbar li {
+    margin: 0 1em;
+    color:#000000;
+}
+
+.navbar a {
+    color: #378487;
+    font-weight: bold;
+    font-size: 1.75rem; /* 28px */
+    text-decoration: none;
+    padding: .10em 0;
+}
+
+.current-page {
+    border-bottom: 1px solid #378487;
+}
 
 .big-container {
+    max-width: 1200px;
     width: 100%;
     margin: 0;
-    padding: 0 10px 0 10px ;
-    background-color:honeydew
+    padding: 0 0.625em; /* 10px */
+    background-color:honeydew;
 }
 
 .container {
-    max-width: 1400px ;
-    padding: 50px;
-    margin: 10px;
+    /* max-width: 1200px; */
+    padding: 3.125em; /* 50px */
+    margin: 0.625em; /* 10px */
     background-color:rgba(96, 157, 159, 0.2);
-    border-radius: 5px;    
+    border-radius: 0.3125em; /* 5px */    
 }
 
 .container p {
-    font-size: 25px;
+    font-size: 1.5625rem; /* 25px */
 }
 
 .home {
@@ -89,33 +103,43 @@ p, li {
 }
 
 .home img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
     border-radius: 100%;
-    width: 220px;
 }
 
 .image-circle {
-    border-radius: 100%;
-    border: 1px double #609d9f;
-    padding: 5px;
     display: flex;
+    width: 100%;
+    max-width: 220px;
+    padding: 0.3125em; /* 5px */
+    border: 0.0625em double #609d9f;
+    border-radius: 100%;
 }
 
 
 .about p {
-    line-height: 40px;   
-    padding-left: 70px; 
+    line-height: 2.5rem; /* 40px */
+    padding-left: 4.375em; /* 70px */ 
 }
 
 .experience div {
-    padding-left:30px;
-    padding-top: 10px;
-    line-height: 30px;
+    padding-left: 1.875em; /* 30px */
+    padding-top: 0.625em; /* 10px */
+    line-height: 1.875rem; /* 30px */
 } 
 
 .experience-position {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /*320px, 1fr*/
+    grid-template-rows: 1.25em 3.125em; /*20px 50px;*/
+    gap: 0.625em; /*10px*/
+
+    /*border: 1px solid red;*/
+    /* display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 } 
 
 .experience-position a,
@@ -126,22 +150,23 @@ p, li {
 
 .skills-box {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    padding-top: 10px;    
+    gap: 2.2em; /* 35px */
+    padding-top: 0.625em; /* 10px */   
 }
 
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:10px;
+    gap: 0.625em; /* 10px */
 }
 
 .projects p {
-    padding-top:10px;;
-    padding-left: 70px;
-    line-height: 40px; 
+    padding-top: 0.625em; /* 10px */
+    padding-left: 4.375em; /* 70px  */
+    line-height: 2.5rem; /* 40px */ 
 }
 
 .connect {
@@ -152,7 +177,7 @@ p, li {
 .social ul {
     display: flex;
     justify-content:center;
-    gap: 50px;
+    gap: 3.125em; /* 50px */
     list-style: none;
 }
 
@@ -163,7 +188,72 @@ p, li {
 
 footer {
     width: 100%;
-    padding: 20px;
+    max-width: 1200px;
+    padding: 1.25em; /* 20px */
     background-color:rgb(232, 204, 195);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 0.3125em 0.3125em; /* 5px */
+}
+
+/* =========== For tablet and phone screens 770px and less  =================== */
+
+@media screen and (max-width: 770px) {
+    header {
+        position:static;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+
+    .social {
+        padding-top: 0.625em;
+    }
+}
+
+/* =========== For phone screens 600px and less =================== */
+
+
+@media screen and (max-width: 600px) {
+
+    .about p {
+        padding-left: 0.5em;
+        padding-top: 0.625em;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    .experience div {
+        padding-left: 0.5em;
+        padding-top: 0.625em; 
+    } 
+
+    .skills-box {
+        padding-top: 0.625em;
+    }
+
+    .skill-item {
+        padding-top: 0.625em;padding-top: 0.625em;
+    }
+
+    .projects p {
+        padding-left: 0.5em;
+    }
+
+    .social {
+        padding-top: 0.625em;
+    }
+}
+
+/* =========== For phone screens 400px and less ===================*/
+
+@media screen and (max-width: 400px) {
+
+    .experience-position {
+        grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+        grid-template-rows: 1em 3em;
+    } 
 }
