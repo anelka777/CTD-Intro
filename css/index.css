@@ -147,21 +147,39 @@ p {
     text-decoration: none;
 }
 
-
+/*
 .skills-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2.2em; /* 35px */
-    padding-top: 0.625em; /* 10px */   
+    gap: 2.2em; 
+    padding-top: 0.625em;   
 }
 
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.625em; /* 10px */
+    gap: 0.625em;
 }
+*/
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1.3em; 
+    gap: 2.2em;
+}
+
+
+.skills li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625em;
+}
+
 
 .projects p {
     padding-top: 0.625em; /* 10px */
@@ -189,11 +207,19 @@ p {
 footer {
     width: 100%;
     max-width: 1200px;
-    padding: 1.25em; /* 20px */
+    padding: 2em; 
     background-color:rgb(232, 204, 195);
     border-radius: 0 0 0.3125em 0.3125em; /* 5px */
 }
 
+footer p {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: #378487;
+    font-size: 1.50rem;
+    font-weight:500;
+}
 /* =========== For tablet and phone screens 770px and less  =================== */
 
 @media screen and (max-width: 770px) {
@@ -214,7 +240,6 @@ footer {
 
 /* =========== For phone screens 600px and less =================== */
 
-
 @media screen and (max-width: 600px) {
 
     .about p {
@@ -231,13 +256,6 @@ footer {
         padding-top: 0.625em; 
     } 
 
-    .skills-box {
-        padding-top: 0.625em;
-    }
-
-    .skill-item {
-        padding-top: 0.625em;padding-top: 0.625em;
-    }
 
     .projects p {
         padding-left: 0.5em;
@@ -247,6 +265,8 @@ footer {
         padding-top: 0.625em;
     }
 }
+
+
 
 /* =========== For phone screens 400px and less ===================*/
 
