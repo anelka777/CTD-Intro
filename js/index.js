@@ -1,11 +1,13 @@
 // ============= footer==================
-
 const today = new Date();
 const thisYear = today.getFullYear();
-const footer = document.querySelector('footer');
+const footer = document.createElement('footer');
+const body = document.querySelector('body');
+body.appendChild(footer);
 const copyright = document.createElement('p');
 copyright.innerHTML = `&copy; Alena Danilchenko ${thisYear}`;
 footer.appendChild(copyright);
+
 
 
 // ============= skills section==================
