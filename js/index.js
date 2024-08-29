@@ -40,3 +40,111 @@ skills.forEach(skill => {
     skillsList.appendChild(skillItem);
 });
 
+//===========leave a message  section============================//
+
+
+
+let messageForm = document.querySelector('[name="leave_message"]');
+let messageSection = document.getElementById('live-message-section');
+let messageList = messageSection.querySelector('ul');
+messageSection.hidden = true;
+
+let idCounter = 0;
+function makeId() {
+    let id = 'entry' + idCounter++;
+    return id;
+}
+
+let entryById={};
+
+messageForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let usersName = event.target.usersName.value;
+    let usersEmail = event.target.usersEmail.value;
+    let usersMessage = event.target.usersMessage.value;
+
+    console.log('Name:', usersName);
+    console.log('Email:', usersEmail);
+    console.log('Message:', usersMessage);
+    let uid = makeId();
+
+    let newMessage = document.createElement('li');
+    newMessage.classList.add('message-item'); // for CSS
+    newMessage.innerHTML = `
+        <a href="mailto:${usersEmail}">${usersName}</a>
+        <span>: ${usersMessage}</span>
+    `;
+    newMessage.setAttribute('id', uid);
+    entryById[uid] = { usersName: usersName, usersEmail: usersEmail, usersMessage: usersMessage };
+
+    newMessage.appendChild(makeRemoveButton());
+    newMessage.appendChild(makeEditButton());
+    messageList.appendChild(newMessage);
+    messageForm.reset();
+    messageSection.hidden = false;
+});
+
+function makeRemoveButton() {
+    let removeButton = document.createElement('button');
+    removeButton.textContent = 'remove';
+    removeButton.type = 'button';
+    removeButton.className = 'remove-button'; //for css
+    removeButton.addEventListener('click', () => {
+        let entry = removeButton.parentNode;
+        let uid1 = entry.getAttribute('id');
+        delete entryById[uid1];
+        entry.remove();
+        if (messageList.childElementCount === 0) {
+            messageSection.hidden = true;
+        };
+    });
+    return removeButton;
+};
+
+
+function makeEditButton() {
+    let editButton = document.createElement('button');
+    editButton.textContent = 'edit';
+    editButton.type = 'button';
+    editButton.className = 'edit-button'; // for CSS
+    
+    editButton.addEventListener('click', () => {
+        let entry = editButton.parentNode;
+
+        let oldEditButton = entry.querySelector('button.edit-button');
+        oldEditButton.hidden = true;
+
+        let oldRemoveButton = entry.querySelector('button.remove-button');
+        oldRemoveButton.hidden = true;
+
+        let uid = entry.getAttribute('id');
+        let cloneForm = messageForm.cloneNode(true);
+        cloneForm.className = 'edit-message-form'; // for CSS
+        cloneForm.usersName.value = entryById[uid].usersName;
+        cloneForm.usersEmail.value = entryById[uid].usersEmail;
+        cloneForm.usersMessage.value = entryById[uid].usersMessage;
+
+
+        entry.appendChild(cloneForm);
+        cloneForm.addEventListener('submit', function editMessage(event) {
+            event.preventDefault();
+
+            entryById[uid].usersName = event.target.usersName.value;
+            entryById[uid].usersEmail = event.target.usersEmail.value;
+            entryById[uid].usersMessage = event.target.usersMessage.value;
+
+            let newEntry = document.createElement('li');
+            newEntry.classList.add('message-item');
+            newEntry.setAttribute('id', uid);
+            newEntry.innerHTML = `
+                <a href="mailto:${entryById[uid].usersEmail}">${entryById[uid].usersName}</a>
+                <span>: ${entryById[uid].usersMessage}</span>
+            `;
+            newEntry.appendChild(makeEditButton());
+            newEntry.appendChild(makeRemoveButton());
+            entry.parentNode.replaceChild(newEntry, entry);
+        });
+    });
+    return editButton;
+};
+
