@@ -184,7 +184,23 @@ p {
 .projects p {
     padding-top: 0.625em; /* 10px */
     padding-left: 4.375em; /* 70px  */
-    line-height: 2.5rem; /* 40px */ 
+    font-size: 1.5rem;
+}
+
+.gh-projects-list {
+display: flex;
+justify-content: center;
+padding: 1em;
+color:#000000;
+}
+
+
+.gh-projects-list li {
+    font-size: 1rem;
+}
+
+.gh-projects-list a {
+    color:#000000;
 }
 
 .connect {
@@ -340,6 +356,18 @@ textarea {
     .social {
         padding-top: 0.625em;
     }
+
+    .projects p {
+        padding-left: 2em;
+    }
+
+    .gh-projects-list {
+        padding: 0.8em;
+    }
+        
+    .gh-projects-list li {
+        font-size: 0.8rem;
+    }
 }
 
 /* =========== For phone screens 600px and less =================== */
@@ -363,12 +391,22 @@ textarea {
 
     .projects p {
         padding-left: 0.5em;
+        font-size: 1.25rem;
     }
 
     .social {
         padding-top: 0.625em;
     }
+
+    .gh-projects-list {
+        padding: 0.6em;
+    }
+        
+    .gh-projects-list li {
+        font-size: 0.7rem;
+    }
 }
+
 
 
 
