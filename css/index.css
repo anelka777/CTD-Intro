@@ -70,10 +70,11 @@ p {
     text-decoration: none;
     padding: .10em 0;
 }
-
+/*
 .current-page {
     border-bottom: 1px solid #378487;
 }
+*/
 
 .big-container {
     max-width: 1200px;
@@ -184,7 +185,23 @@ p {
 .projects p {
     padding-top: 0.625em; /* 10px */
     padding-left: 4.375em; /* 70px  */
-    line-height: 2.5rem; /* 40px */ 
+    font-size: 1.5rem;
+}
+
+.gh-projects-list {
+display: flex;
+justify-content: center;
+padding: 1em;
+color:#000000;
+}
+
+
+.gh-projects-list li {
+    font-size: 1rem;
+}
+
+.gh-projects-list a {
+    color:#000000;
 }
 
 .connect {
@@ -340,6 +357,18 @@ textarea {
     .social {
         padding-top: 0.625em;
     }
+
+    .projects p {
+        padding-left: 2em;
+    }
+
+    .gh-projects-list {
+        padding: 0.8em;
+    }
+        
+    .gh-projects-list li {
+        font-size: 0.8rem;
+    }
 }
 
 /* =========== For phone screens 600px and less =================== */
@@ -349,10 +378,19 @@ textarea {
     .about p {
         padding-left: 0.5em;
         padding-top: 0.625em;
+        font-size: 1.2rem;
     }
 
     h1, h2, h3 {
         text-align: center;
+    }
+
+    .skills img {
+        width: 30px;
+    }
+
+    .skills p {
+        font-size: 1.2rem;
     }
 
     .experience div {
@@ -360,16 +398,27 @@ textarea {
         padding-top: 0.625em; 
     } 
 
+    .experience p {
+        font-size: 1.2rem;
+    } 
 
     .projects p {
         padding-left: 0.5em;
+        font-size: 1.25rem;
     }
 
     .social {
         padding-top: 0.625em;
     }
-}
 
+    .gh-projects-list {
+        padding: 0.6em;
+    }
+        
+    .gh-projects-list li {
+        font-size: 0.7rem;
+    }
+}
 
 
 /* =========== For phone screens 400px and less ===================*/
@@ -380,4 +429,12 @@ textarea {
         grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
         grid-template-rows: 1em 3em;
     } 
+
+    .social img {
+        width: 45px;
+    }
+
+    .social ul {
+        gap: 2.125em;
+    }
 }

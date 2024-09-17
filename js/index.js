@@ -72,7 +72,7 @@ messageForm.addEventListener('submit', (event) => {
     newMessage.classList.add('message-item'); // for CSS
     newMessage.innerHTML = `
         <a href="mailto:${usersEmail}">${usersName}</a>
-        <span>: ${usersMessage}</span>
+        <span> ${usersMessage}</span>
     `;
     newMessage.setAttribute('id', uid);
     entryById[uid] = { usersName: usersName, usersEmail: usersEmail, usersMessage: usersMessage };
@@ -138,7 +138,7 @@ function makeEditButton() {
             newEntry.setAttribute('id', uid);
             newEntry.innerHTML = `
                 <a href="mailto:${entryById[uid].usersEmail}">${entryById[uid].usersName}</a>
-                <span>: ${entryById[uid].usersMessage}</span>
+                <span> ${entryById[uid].usersMessage}</span>
             `;
             newEntry.appendChild(makeEditButton());
             newEntry.appendChild(makeRemoveButton());
@@ -148,3 +148,85 @@ function makeEditButton() {
     return editButton;
 };
 
+
+/*==============================================================================*/
+
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.github.com/users/anelka777/repos');
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+        const data = await response.json();
+        console.log("json data = ", data);
+        repositories = [...data];
+        const projectsSection = document.getElementById('projects');
+        const projectsList = projectsSection.getElementsByTagName('UL');
+
+        for (let i = 0; i < repositories.length; i++) {
+            let project = document.createElement('LI');
+            let link = document.createElement('A');
+            link.href = repositories[i].html_url;
+            link.innerText = repositories[i].html_url;
+            link.target = '_blank';
+            project.appendChild(link);
+            projectsList[0].appendChild(project);
+        }
+    } catch (error) {
+        console.log('An error occurred', error);
+    }
+}
+
+
+fetchData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+fetch('https://api.github.com/users/anelka777/repos')
+.then((response) => {
+    if(!response.ok) {
+        throw new Error('Request failed');
+    }
+    return response.json();
+})
+
+.then((data) => {
+    console.log("json data = ", data);
+    repositories = [...data];
+    console.log("repositories array = ", repositories);
+
+    const projectsSection = document.getElementById('projects');
+    const projectsList = projectsSection.getElementsByTagName('UL');
+
+
+    for (let i = 0; i < repositories.length; i++) {
+        let project = document.createElement('LI');
+        project.innerText = repositories[i].html_url;
+        console.log(project);
+        projectsList[0].appendChild(project);
+    }
+})
+.catch((error) => {
+    console.log('An error occurred', error);
+});
+*/
