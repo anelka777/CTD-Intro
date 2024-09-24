@@ -6,7 +6,8 @@
 }
 
 html {
-   font-size: 16px; /* Basic font size */  
+   font-size: 16px; /* Basic font size */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +26,7 @@ header {
     padding: 2em 0;
     background-color:rgb(232, 204, 195);
     border-radius: 0.3125em 0.3125em 0 0; /* 5px / 16px = 0.3125em */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     z-index: 1000;
 }
 
@@ -69,12 +71,16 @@ p {
     font-size: 1.75rem; /* 28px */
     text-decoration: none;
     padding: .10em 0;
+    transition: color 0.3s, background-color 0.3s, border-bottom 0.3s;
 }
-/*
-.current-page {
-    border-bottom: 1px solid #378487;
+
+.navbar a:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    padding: 0.5em 0.5em;
+    border-radius: 20px;
 }
-*/
+
 
 .big-container {
     max-width: 1200px;
@@ -82,15 +88,25 @@ p {
     margin: 0;
     padding: 0 0.625em; /* 10px */
     background-color:honeydew;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 .container {
-    /* max-width: 1200px; */
     padding: 3.125em; /* 50px */
     margin: 0.625em; /* 10px */
     background-color:rgba(96, 157, 159, 0.2);
-    border-radius: 0.3125em; /* 5px */    
+    border-radius: 0.3125em; /* 5px */
 }
+
+.about,
+.experience,
+.skills,
+.projects,
+.connect,
+.leave-message {
+    box-shadow: 0 0 20px rgba(96, 157, 159, 0.7);   
+}
+
 
 .container p {
     font-size: 1.5625rem; /* 25px */
@@ -115,8 +131,9 @@ p {
     width: 100%;
     max-width: 220px;
     padding: 0.3125em; /* 5px */
-    border: 0.0625em double #609d9f;
+    border: 0.0625em double rgb(96, 157, 159);
     border-radius: 100%;
+    box-shadow: 0 0 10px rgba(96, 157, 159, 0.8);
 }
 
 
@@ -136,11 +153,6 @@ p {
     grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /*320px, 1fr*/
     grid-template-rows: 1.25em 3.125em; /*20px 50px;*/
     gap: 0.625em; /*10px*/
-
-    /*border: 1px solid red;*/
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
 } 
 
 .experience-position a,
@@ -148,22 +160,6 @@ p {
     text-decoration: none;
 }
 
-/*
-.skills-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.2em; 
-    padding-top: 0.625em;   
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.625em;
-}
-*/
 .skills ul {
     display: flex;
     flex-wrap: wrap;
@@ -189,15 +185,20 @@ p {
 }
 
 .gh-projects-list {
-display: flex;
-justify-content: center;
-padding: 1em;
-color:#000000;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    color:#000000;
+}
+
+.gh-project-item {
+    margin: 0.8em;
+    list-style-type: square;
 }
 
 
 .gh-projects-list li {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .gh-projects-list a {
@@ -218,6 +219,9 @@ color:#000000;
 
 .social img {
     filter: invert(52%) sepia(43%) saturate(600%) hue-rotate(143deg) brightness(91%) contrast(120%);
+    border-radius: 100%;
+    box-shadow: 0 0 20px rgba(96, 157, 159, 0.2);   
+
 }
 
 
@@ -227,6 +231,7 @@ footer {
     padding: 2em; 
     background-color:#e8ccc3;
     border-radius: 0 0 0.3125em 0.3125em; /* 5px */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 footer p {
@@ -283,19 +288,13 @@ form {
     border-radius: 20px; 
     padding: 2rem;
     margin-bottom: 1rem; 
-    background-color:#ccc;
+    background-color:rgb(204, 204, 204);
+    box-shadow: 0 0 10px rgba(204, 204, 204, 0.5);
     box-sizing: border-box;
     text-align: start;
     max-width: 100%;
 }
 
-/*
-.add-message li::marker {
-    content: "➤"; 
-    font-size: 1rem;
-    color:#378487;
-} 
-*/
 
 .add-message a {
     color:#378487;
@@ -320,6 +319,7 @@ label, .submit-button {
 input, textarea {
     border-radius:20px;
     border: none;
+    box-shadow: 0 0 20px rgba(96, 157, 159, 0.7);
 }
 
 input {
@@ -335,7 +335,8 @@ textarea {
 .submit-button {
     border-radius: 20px;
     height: 1.75rem;
-    border: 1px solid #378487;
+    border: 1px solid rgba(55, 132, 135, 0.6);
+    box-shadow: 0 0 20px rgba(96, 157, 159, 0.8);
     background-color:#e8ccc3;
 }
 

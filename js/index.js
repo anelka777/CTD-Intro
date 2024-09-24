@@ -5,7 +5,7 @@ const footer = document.createElement('footer');
 const body = document.querySelector('body');
 body.appendChild(footer);
 const copyright = document.createElement('p');
-copyright.innerHTML = `&copy; Alena Danilchenko ${thisYear}`;
+copyright.innerHTML = `Alena Danilchenko &copy; ${thisYear}`;
 footer.appendChild(copyright);
 
 
@@ -165,6 +165,7 @@ async function fetchData() {
 
         for (let i = 0; i < repositories.length; i++) {
             let project = document.createElement('LI');
+            project.classList.add('gh-project-item');
             let link = document.createElement('A');
             link.href = repositories[i].html_url;
             link.innerText = repositories[i].html_url;
@@ -181,52 +182,3 @@ async function fetchData() {
 fetchData();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-fetch('https://api.github.com/users/anelka777/repos')
-.then((response) => {
-    if(!response.ok) {
-        throw new Error('Request failed');
-    }
-    return response.json();
-})
-
-.then((data) => {
-    console.log("json data = ", data);
-    repositories = [...data];
-    console.log("repositories array = ", repositories);
-
-    const projectsSection = document.getElementById('projects');
-    const projectsList = projectsSection.getElementsByTagName('UL');
-
-
-    for (let i = 0; i < repositories.length; i++) {
-        let project = document.createElement('LI');
-        project.innerText = repositories[i].html_url;
-        console.log(project);
-        projectsList[0].appendChild(project);
-    }
-})
-.catch((error) => {
-    console.log('An error occurred', error);
-});
-*/
