@@ -126,6 +126,7 @@ p {
     border-radius: 100%;
 }
 
+
 .image-circle {
     display: flex;
     width: 100%;
@@ -205,6 +206,14 @@ p {
     color:#000000;
 }
 
+.gh-projects-list li:hover {
+    background-color: rgba(240, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(240, 255, 255, 0.8);
+    padding: 0.1em;
+    border: 1px solid rgba(240, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
 .connect {
     display: flex;
     flex-direction: column;    
@@ -217,11 +226,16 @@ p {
     list-style: none;
 }
 
+
 .social img {
     filter: invert(52%) sepia(43%) saturate(600%) hue-rotate(143deg) brightness(91%) contrast(120%);
     border-radius: 100%;
-    box-shadow: 0 0 20px rgba(96, 157, 159, 0.2);   
+    box-shadow: 0 0 10px rgba(96, 157, 159, 0.2);   
+}
 
+.social img:hover {
+    box-shadow: 0 0 20px;
+    padding: 0.5em;
 }
 
 
@@ -308,8 +322,17 @@ form {
     padding: 0.2rem;
     margin: 0.2rem;
     border: 1px solid #378487;
-    background-color:#e8ccc3;
+    background-color:rgb(232, 204, 195);
 }
+
+.add-message .edit-button:hover,
+.add-message .remove-button:hover {
+    background-color:rgba(232, 204, 195, 0.8);
+    border:1px solid rgba(223, 164, 144, 0.5);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+
 
 
 label, .submit-button {
@@ -335,11 +358,18 @@ textarea {
 .submit-button {
     border-radius: 20px;
     height: 1.75rem;
-    border: 1px solid rgba(55, 132, 135, 0.6);
+    border: 1px solid rgba(55, 132, 135, 0.4);
     box-shadow: 0 0 20px rgba(96, 157, 159, 0.8);
-    background-color:#e8ccc3;
+    background-color:rgb(232, 204, 195);
 }
 
+.submit-button:hover {
+    background-color:rgba(232, 204, 195, 0.8);
+    border:1px solid rgba(232, 204, 195, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    height: 1.9rem;
+}
 
 
 /* =========== For tablet and phone screens 770px and less  =================== */
